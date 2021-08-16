@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="beatbot_portrait.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="bb" x="0" y="0" width="409" height="245"/>
+	<SubTexture name="bbsurprised" x="409" y="0" width="409" height="245"/>
+	<SubTexture name="bbscared" x="818" y="0" width="409" height="245"/>
+	<SubTexture name="bbangry" x="0" y="245" width="409" height="245"/>
+	<SubTexture name="bbworry" x="409" y="245" width="409" height="245"/>
+	<SubTexture name="bbfrown" x="818" y="245" width="409" height="245"/>
+	<SubTexture name="bbshadow" x="0" y="490" width="409" height="245"/>
+	<SubTexture name="bbhey" x="409" y="490" width="409" height="245"/>
+	<SubTexture name="bbshock" x="818" y="490" width="409" height="245"/>
+	<SubTexture name="bbunamused" x="0" y="735" width="409" height="245"/>
+	<SubTexture name="bbbruh" x="409" y="735" width="409" height="245"/>
+	<SubTexture name="bbunhappy" x="818" y="735" width="409" height="245"/>
+	<SubTexture name="bbthink" x="0" y="980" width="409" height="245"/>
+	<SubTexture name="bbyeah" x="409" y="980" width="409" height="245"/>
+	<SubTexture name="bbsweat" x="818" y="980" width="409" height="245"/>
+</TextureAtlas>

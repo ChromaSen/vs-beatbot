@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="gf_portrait.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="gf" x="0" y="0" width="409" height="245"/>
+	<SubTexture name="gfwhat" x="409" y="0" width="409" height="245"/>
+	<SubTexture name="gfshock" x="818" y="0" width="409" height="245"/>
+	<SubTexture name="gfangry" x="0" y="245" width="409" height="245"/>
+	<SubTexture name="gfworry" x="409" y="245" width="409" height="245"/>
+	<SubTexture name="gfupset" x="818" y="245" width="409" height="245"/>
+	<SubTexture name="gfshadow" x="0" y="490" width="409" height="245"/>
+	<SubTexture name="gffrisk" x="409" y="490" width="409" height="245"/>
+	<SubTexture name="gfmad" x="818" y="490" width="409" height="245"/>
+	<SubTexture name="gfunamused" x="0" y="735" width="409" height="245"/>
+	<SubTexture name="gfbruh" x="409" y="735" width="409" height="245"/>
+	<SubTexture name="gfscared" x="818" y="735" width="409" height="245"/>
+	<SubTexture name="gfevil" x="0" y="980" width="409" height="245"/>
+	<SubTexture name="gfhappy" x="409" y="980" width="409" height="245"/>
+	<SubTexture name="gfuhm" x="818" y="980" width="409" height="245"/>
+</TextureAtlas>

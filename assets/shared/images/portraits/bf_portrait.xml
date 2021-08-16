@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bf_portrait.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="bf" x="0" y="0" width="409" height="245"/>
+	<SubTexture name="bfwhat" x="409" y="0" width="409" height="245"/>
+	<SubTexture name="bfshocked" x="818" y="0" width="409" height="245"/>
+	<SubTexture name="bfpoint" x="0" y="245" width="409" height="245"/>
+	<SubTexture name="bfworry" x="409" y="245" width="409" height="245"/>
+	<SubTexture name="bfupset" x="818" y="245" width="409" height="245"/>
+	<SubTexture name="bfshadow" x="0" y="490" width="409" height="245"/>
+	<SubTexture name="bflol" x="409" y="490" width="409" height="245"/>
+	<SubTexture name="bfsmile" x="818" y="490" width="409" height="245"/>
+	<SubTexture name="bfunamused" x="0" y="735" width="409" height="245"/>
+	<SubTexture name="bfbruh" x="409" y="735" width="409" height="245"/>
+	<SubTexture name="bfcry" x="818" y="735" width="409" height="245"/>
+	<SubTexture name="bfconfident" x="0" y="980" width="409" height="245"/>
+	<SubTexture name="bffrisk" x="409" y="980" width="409" height="245"/>
+	<SubTexture name="bfscared" x="818" y="980" width="409" height="245"/>
+</TextureAtlas>

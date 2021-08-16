@@ -1,0 +1,5 @@
+bf
+gf
+monster
+bbot
+deadbbot

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="BBot.png"><SubTexture name="BBot idle0000" x="0" y="0" width="315" height="714" frameX="0" frameY="0" frameWidth="315" frameHeight="714" />
+<SubTexture name="BBot idle0001" x="315" y="0" width="315" height="714" frameX="0" frameY="0" frameWidth="315" frameHeight="714" />
+<SubTexture name="BBot idle0002" x="630" y="0" width="315" height="714" frameX="0" frameY="0" frameWidth="315" frameHeight="714" />
+<SubTexture name="BBot idle0003" x="945" y="0" width="315" height="714" frameX="0" frameY="0" frameWidth="315" frameHeight="714" />
+<SubTexture name="BBot idle0004" x="0" y="714" width="315" height="714" frameX="0" frameY="0" frameWidth="315" frameHeight="714" />
+<SubTexture name="BBot idle0005" x="315" y="714" width="315" height="714" frameX="0" frameY="0" frameWidth="315" frameHeight="714" />
+<SubTexture name="BBot idle0006" x="630" y="714" width="315" height="714" frameX="0" frameY="0" frameWidth="315" frameHeight="714" />
+<SubTexture name="BBot idle0007" x="945" y="714" width="315" height="714" frameX="0" frameY="0" frameWidth="315" frameHeight="714" />
+<SubTexture name="BBot idle0008" x="0" y="1428" width="315" height="714" frameX="0" frameY="0" frameWidth="315" frameHeight="714" />
+<SubTexture name="BBot idle0009" x="315" y="1428" width="315" height="714" frameX="0" frameY="0" frameWidth="315" frameHeight="714" />
+<SubTexture name="BBot idle0010" x="630" y="1428" width="315" height="714" frameX="0" frameY="0" frameWidth="315" frameHeight="714" />
+<SubTexture name="BBot idle0011" x="945" y="1428" width="315" height="714" frameX="0" frameY="0" frameWidth="315" frameHeight="714" />
+<SubTexture name="BBot idle0012" x="0" y="2142" width="315" height="714" frameX="0" frameY="0" frameWidth="315" frameHeight="714" />
+<SubTexture name="BBot down0000" x="315" y="2142" width="427" height="654" frameX="0" frameY="0" frameWidth="427" frameHeight="654" />
+<SubTexture name="BBot down0001" x="742" y="2142" width="427" height="654" frameX="0" frameY="0" frameWidth="427" frameHeight="654" />
+<SubTexture name="BBot down0002" x="1169" y="2142" width="427" height="654" frameX="0" frameY="0" frameWidth="427" frameHeight="654" />
+<SubTexture name="BBot down0003" x="0" y="2856" width="427" height="654" frameX="0" frameY="0" frameWidth="427" frameHeight="654" />
+<SubTexture name="BBot down0004" x="427" y="2856" width="427" height="654" frameX="0" frameY="0" frameWidth="427" frameHeight="654" />
+<SubTexture name="BBot left0000" x="854" y="2856" width="415" height="704" frameX="0" frameY="0" frameWidth="415" frameHeight="704" />
+<SubTexture name="BBot left0001" x="1269" y="2856" width="415" height="704" frameX="0" frameY="0" frameWidth="415" frameHeight="704" />
+<SubTexture name="BBot left0002" x="0" y="3560" width="415" height="704" frameX="0" frameY="0" frameWidth="415" frameHeight="704" />
+<SubTexture name="BBot left0003" x="415" y="3560" width="415" height="704" frameX="0" frameY="0" frameWidth="415" frameHeight="704" />
+<SubTexture name="BBot left0004" x="830" y="3560" width="415" height="704" frameX="0" frameY="0" frameWidth="415" frameHeight="704" />
+<SubTexture name="BBot right0000" x="1245" y="3560" width="386" height="699" frameX="0" frameY="0" frameWidth="386" frameHeight="699" />
+<SubTexture name="BBot right0001" x="0" y="4264" width="386" height="699" frameX="0" frameY="0" frameWidth="386" frameHeight="699" />
+<SubTexture name="BBot right0002" x="386" y="4264" width="386" height="699" frameX="0" frameY="0" frameWidth="386" frameHeight="699" />
+<SubTexture name="BBot right0003" x="772" y="4264" width="386" height="699" frameX="0" frameY="0" frameWidth="386" frameHeight="699" />
+<SubTexture name="BBot right0004" x="1158" y="4264" width="386" height="699" frameX="0" frameY="0" frameWidth="386" frameHeight="699" />
+<SubTexture name="BBot up0000" x="0" y="4963" width="389" height="724" frameX="0" frameY="0" frameWidth="389" frameHeight="724" />
+<SubTexture name="BBot up0001" x="389" y="4963" width="389" height="724" frameX="0" frameY="0" frameWidth="389" frameHeight="724" />
+<SubTexture name="BBot up0002" x="778" y="4963" width="389" height="724" frameX="0" frameY="0" frameWidth="389" frameHeight="724" />
+<SubTexture name="BBot up0003" x="1167" y="4963" width="389" height="724" frameX="0" frameY="0" frameWidth="389" frameHeight="724" />
+<SubTexture name="BBot up0004" x="0" y="5687" width="389" height="724" frameX="0" frameY="0" frameWidth="389" frameHeight="724" />
+</TextureAtlas>

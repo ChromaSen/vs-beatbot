@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Hologram.png"><SubTexture name="Hologram DOWN0000" x="0" y="0" width="720" height="773" frameX="0" frameY="0" frameWidth="720" frameHeight="773" />
+<SubTexture name="Hologram DOWN0001" x="720" y="0" width="720" height="773" frameX="0" frameY="0" frameWidth="720" frameHeight="773" />
+<SubTexture name="Hologram DOWN0002" x="1440" y="0" width="720" height="773" frameX="0" frameY="0" frameWidth="720" frameHeight="773" />
+<SubTexture name="Hologram DOWN0003" x="2160" y="0" width="720" height="773" frameX="0" frameY="0" frameWidth="720" frameHeight="773" />
+<SubTexture name="Hologram DOWN0004" x="0" y="773" width="720" height="773" frameX="0" frameY="0" frameWidth="720" frameHeight="773" />
+<SubTexture name="Hologram DOWN0005" x="720" y="773" width="720" height="773" frameX="0" frameY="0" frameWidth="720" frameHeight="773" />
+<SubTexture name="Hologram IDLE0000" x="1440" y="773" width="601" height="781" frameX="0" frameY="0" frameWidth="601" frameHeight="781" />
+<SubTexture name="Hologram IDLE0001" x="2041" y="773" width="601" height="781" frameX="0" frameY="0" frameWidth="601" frameHeight="781" />
+<SubTexture name="Hologram IDLE0002" x="0" y="1554" width="601" height="781" frameX="0" frameY="0" frameWidth="601" frameHeight="781" />
+<SubTexture name="Hologram IDLE0003" x="601" y="1554" width="601" height="781" frameX="0" frameY="0" frameWidth="601" frameHeight="781" />
+<SubTexture name="Hologram IDLE0004" x="1202" y="1554" width="601" height="781" frameX="0" frameY="0" frameWidth="601" frameHeight="781" />
+<SubTexture name="Hologram IDLE0005" x="1803" y="1554" width="601" height="781" frameX="0" frameY="0" frameWidth="601" frameHeight="781" />
+<SubTexture name="Hologram IDLE0006" x="0" y="2335" width="601" height="781" frameX="0" frameY="0" frameWidth="601" frameHeight="781" />
+<SubTexture name="Hologram LEFT0000" x="601" y="2335" width="772" height="806" frameX="0" frameY="0" frameWidth="772" frameHeight="806" />
+<SubTexture name="Hologram LEFT0001" x="1373" y="2335" width="772" height="806" frameX="0" frameY="0" frameWidth="772" frameHeight="806" />
+<SubTexture name="Hologram LEFT0002" x="2145" y="2335" width="772" height="806" frameX="0" frameY="0" frameWidth="772" frameHeight="806" />
+<SubTexture name="Hologram LEFT0003" x="0" y="3141" width="772" height="806" frameX="0" frameY="0" frameWidth="772" frameHeight="806" />
+<SubTexture name="Hologram LEFT0004" x="772" y="3141" width="772" height="806" frameX="0" frameY="0" frameWidth="772" frameHeight="806" />
+<SubTexture name="Hologram RIGHT0000" x="1544" y="3141" width="732" height="774" frameX="0" frameY="0" frameWidth="732" frameHeight="774" />
+<SubTexture name="Hologram RIGHT0001" x="2276" y="3141" width="732" height="774" frameX="0" frameY="0" frameWidth="732" frameHeight="774" />
+<SubTexture name="Hologram RIGHT0002" x="0" y="3947" width="732" height="774" frameX="0" frameY="0" frameWidth="732" frameHeight="774" />
+<SubTexture name="Hologram RIGHT0003" x="732" y="3947" width="732" height="774" frameX="0" frameY="0" frameWidth="732" frameHeight="774" />
+<SubTexture name="Hologram RIGHT0004" x="1464" y="3947" width="732" height="774" frameX="0" frameY="0" frameWidth="732" frameHeight="774" />
+<SubTexture name="Hologram UP0000" x="2196" y="3947" width="752" height="803" frameX="0" frameY="0" frameWidth="752" frameHeight="803" />
+<SubTexture name="Hologram UP0001" x="0" y="4750" width="752" height="803" frameX="0" frameY="0" frameWidth="752" frameHeight="803" />
+<SubTexture name="Hologram UP0002" x="752" y="4750" width="752" height="803" frameX="0" frameY="0" frameWidth="752" frameHeight="803" />
+<SubTexture name="Hologram UP0003" x="1504" y="4750" width="752" height="803" frameX="0" frameY="0" frameWidth="752" frameHeight="803" />
+</TextureAtlas>
