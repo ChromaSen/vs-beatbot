@@ -2,8 +2,7 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxState;
-import flixel.text.FlxText;
-import flixel.util.FlxColor;
+import openfl.events.Event;
 import openfl.media.Video;
 import openfl.net.NetConnection;
 import openfl.net.NetStream;
@@ -28,31 +27,24 @@ class MP4Handler
 		if (FlxG.sound.music != null)
 		{
 			FlxG.sound.music.stop();
+			//vocals.stop();
 		}
 	}
 
 	public function playMP4(path:String, callback:FlxState, ?repeat:Bool = false, ?isWindow:Bool = false, ?isFullscreen:Bool = false):Void
 	{
+		#if html5
+		FlxG.autoPause = false;
+
+		if (FlxG.sound.music != null)
+		{
+			FlxG.sound.music.stop();
+			//vocals.stop();
+		}
+
 		finishCallback = callback;
 
-                #if desktop
-		vlcBitmap = new VlcBitmap();
-		vlcBitmap.onVideoReady = onVLCVideoReady;
-		vlcBitmap.onComplete = onVLCComplete;
-		vlcBitmap.volume = FlxG.sound.volume;
-
-		if (repeat)
-			vlcBitmap.repeat = -1;
-		else
-			vlcBitmap.repeat = 0;
-
-		vlcBitmap.inWindow = isWindow;
-		vlcBitmap.fullscreen = isFullscreen;
-
-		FlxG.addChildBelowMouse(vlcBitmap);
-		vlcBitmap.play(checkFile(path));
-                #elseif html5
-                video = new Video();
+		video = new Video();
 		video.x = 0;
 		video.y = 0;
 
@@ -66,16 +58,42 @@ class MP4Handler
 
 		nc.addEventListener("netStatus", netConnection_onNetStatus);
 
-		netStream.play(videoPath);
-                #end
-    
+		netStream.play(path);
+		#else
+		finishCallback = callback;
+
+		vlcBitmap = new VlcBitmap();
+		vlcBitmap.set_height(FlxG.stage.stageHeight);
+		vlcBitmap.set_width(FlxG.stage.stageHeight * (16 / 9));
+
+		trace("Setting width to " + FlxG.stage.stageHeight * (16 / 9));
+		trace("Setting height to " + FlxG.stage.stageHeight);
+
+		vlcBitmap.onVideoReady = onVLCVideoReady;
+		vlcBitmap.onComplete = onVLCComplete;
+		vlcBitmap.onError = onVLCError;
+
+		FlxG.stage.addEventListener(Event.ENTER_FRAME, update);
+
+		if (repeat)
+			vlcBitmap.repeat = -1;
+		else
+			vlcBitmap.repeat = 0;
+
+		vlcBitmap.inWindow = isWindow;
+		vlcBitmap.fullscreen = isFullscreen;
+
+		FlxG.addChildBelowMouse(vlcBitmap);
+		vlcBitmap.play(checkFile(path));
+		#end
 	}
 
-        #if desktop
+	#if desktop
 	function checkFile(fileName:String):String
 	{
 		var pDir = "";
 		var appDir = "file:///" + Sys.getCwd() + "/";
+
 		if (fileName.indexOf(":") == -1) // Not a path
 			pDir = appDir;
 		else if (fileName.indexOf("file://") == -1 || fileName.indexOf("http") == -1) // C:, D: etc? ..missing "file:///" ?
@@ -91,7 +109,7 @@ class MP4Handler
 		trace("video loaded!");
 	}
 
-	function onVLCComplete()
+	public function onVLCComplete()
 	{
 		vlcBitmap.stop();
 
@@ -107,14 +125,27 @@ class MP4Handler
 
 		if (finishCallback != null)
 		{
-			FlxG.switchState(finishCallback);
+			LoadingState.loadAndSwitchState(finishCallback);
 		}
+	}
+
+	function onVLCError()
+	{
+		if (finishCallback != null)
+		{
+			LoadingState.loadAndSwitchState(finishCallback);
+		}
+	}
+
+	function update(e:Event)
+	{
+		vlcBitmap.volume = FlxG.sound.volume; // shitty volume fix
 	}
 	#end
 
 	/////////////////////////////////////////////////////////////////////////////////////
 
-	function client_onMetaData(videoPath)
+	function client_onMetaData(path)
 	{
 		video.attachNetStream(netStream);
 
@@ -122,9 +153,9 @@ class MP4Handler
 		video.height = FlxG.height;
 	}
 
-	function netConnection_onNetStatus(videoPath)
+	function netConnection_onNetStatus(path)
 	{
-		if (videoPath.info.code == "NetStream.Play.Complete")
+		if (path.info.code == "NetStream.Play.Complete")
 		{
 			finishVideo();
 		}
@@ -141,9 +172,23 @@ class MP4Handler
 
 		if (finishCallback != null)
 		{
-			FlxG.switchState(finishCallback);
+			LoadingState.loadAndSwitchState(finishCallback);
 		}
 		else
-			FlxG.switchState(new MainMenuState());
+			LoadingState.loadAndSwitchState(new MainMenuState());
 	}
+
+	// old html5 player
+	/*
+		var nc:NetConnection = new NetConnection();
+		nc.connect(null);
+		var ns:NetStream = new NetStream(nc);
+		var myVideo:Video = new Video();
+		myVideo.width = FlxG.width;
+		myVideo.height = FlxG.height;
+		myVideo.attachNetStream(ns);
+		ns.play(path);
+		return myVideo;
+		ns.close();
+	 */
 }

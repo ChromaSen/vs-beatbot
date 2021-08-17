@@ -257,8 +257,10 @@ class PlayState extends MusicBeatState
 	private var replayAna:Analysis = new Analysis(); // replay analysis
 
 	public static var highestCombo:Int = 0;
+	var video:MP4Handler; 
 
 	private var executeModchart = false;
+	var isCutscene:Bool = false;
 
 	// Animation common suffixes
 	private var dataSuffix:Array<String> = ['LEFT', 'DOWN', 'UP', 'RIGHT'];
@@ -3259,10 +3261,10 @@ class PlayState extends MusicBeatState
 		if (!inCutscene && songStarted)
 			keyShit();
 
-		#if debug
+		
 		if (FlxG.keys.justPressed.ONE)
 			endSong();
-		#end
+		
 	}
 
 	function endSong():Void
@@ -3341,19 +3343,25 @@ class PlayState extends MusicBeatState
 
 				if (storyPlaylist.length <= 0)
 				{
-					transIn = FlxTransitionableState.defaultTransIn;
-					transOut = FlxTransitionableState.defaultTransOut;
+					//transIn = FlxTransitionableState.defaultTransIn;
+					//transOut = FlxTransitionableState.defaultTransOut;
 					
-				    switch(SONG.song.toLowerCase())
+				  switch(SONG.song.toLowerCase())
                     {
-                        case 'Beatbot':
+                        case 'beatbot':
                             FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){
-                                var video:VideoHandlerMP4 = new VideoHandlerMP4();
+                                video= new MP4Handler();
                                 video.playMP4(Paths.video('dialoguesecond'), new PlayState());
                             });
+						case 'game-over':
+							FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){
+								video= new MP4Handler();
+								video.playMP4(Paths.video('cutscene'), new PlayState());
+							});
                         default:
+							video.onVLCComplete();
                             LoadingState.loadAndSwitchState(new PlayState());
-                    } 
+                    }
 
 					paused = true;
 
@@ -3418,14 +3426,15 @@ class PlayState extends MusicBeatState
 						FlxG.sound.play(Paths.sound('Lights_Shut_off'));
 					}
 
-					FlxTransitionableState.skipNextTransIn = true;
-					FlxTransitionableState.skipNextTransOut = true;
+					//FlxTransitionableState.skipNextTransIn = true;
+					//FlxTransitionableState.skipNextTransOut = true;
 					prevCamFollow = camFollow;
 
 					PlayState.SONG = Song.loadFromJson(poop, PlayState.storyPlaylist[0]);
 					FlxG.sound.music.stop();
-
-					LoadingState.loadAndSwitchState(new PlayState());
+					video.onVLCComplete();
+                     LoadingState.loadAndSwitchState(new PlayState());
+                     
 				}
 			}
 			else
