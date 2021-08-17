@@ -3444,8 +3444,8 @@ class PlayState extends MusicBeatState
 						FlxG.sound.play(Paths.sound('Lights_Shut_off'));
 					}
 
-					//FlxTransitionableState.skipNextTransIn = true;
-					//FlxTransitionableState.skipNextTransOut = true;
+					FlxTransitionableState.skipNextTransIn = true;
+					FlxTransitionableState.skipNextTransOut = true;
 					prevCamFollow = camFollow;
 
 					PlayState.SONG = Song.loadFromJson(poop, PlayState.storyPlaylist[0]);
@@ -3453,7 +3453,7 @@ class PlayState extends MusicBeatState
 					switch(SONG.song.toLowerCase())
                     {
 					    case 'beatbot':
-				            LoadingState.loadAndSwitchState(new VideoState("assets/videos/dialoguefirst.webm",new PlayState()));
+				            LoadingState.loadAndSwitchState(new VideoState("assets/videos/dialoguesecond.webm",new PlayState()));
 						case 'game-over':
 							LoadingState.loadAndSwitchState(new VideoState("assets/videos/framebot.webm",new PlayState()));
 						default:
