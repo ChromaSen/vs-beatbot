@@ -208,6 +208,7 @@ class PlayState extends MusicBeatState
 	var upperBoppers:FlxSprite;
 	var bottomBoppers:FlxSprite;
 	var santa:FlxSprite;
+	var bop:FlxSprite;
 
 	var fc:Bool = true;
 
@@ -894,16 +895,43 @@ class PlayState extends MusicBeatState
 						 bg.scrollFactor.set(0.9, 0.9);
 						bg.active = false;
 						add(bg);
+						bop = new FlxSprite(0, 100);
+						bop.scale.set(2, 2);
+						bop.frames = Paths.getSparrowAtlas('boppers/boppers');
+						bop.animation.addByPrefix('idle', 'boppers bottom', 24, false);
+						if(FlxG.save.data.antialiasing)
+						{
+							bop.antialiasing = true;
+						}
+						if (FlxG.save.data.distractions)
+						{
+							//add(bop);
+						}
+
+						
 					}
 				case 'sunset':
 					{
 						defaultCamZoom = 0.78;
 						curStage = 'sunset';
+						
 						var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('sunset_bg-1'));
 						bg.antialiasing = true;
 				        bg.scrollFactor.set(0.9, 0.9);
 						bg.active = false;
 						add(bg);
+						bop = new FlxSprite(0, 100);
+						bop.scale.set(2, 2);
+						bop.frames = Paths.getSparrowAtlas('boppers/boppers');
+						bop.animation.addByPrefix('idle', 'boppers bottom', 24, false);
+						if(FlxG.save.data.antialiasing)
+						{
+							bop.antialiasing = true;
+						}
+						if (FlxG.save.data.distractions)
+						{
+							//add(bop);
+						}
 					}
 				case 'night':
 					{
@@ -1083,9 +1111,13 @@ class PlayState extends MusicBeatState
 			// Shitty layering but whatev it works LOL
 			if (curStage == 'limo')
 				add(limo);
-
 			add(dad);
 			add(boyfriend);
+			
+			if (curStage == 'normalbg')
+				add(bop);
+			if (curStage == 'sunset')
+				add(bop);
 		}
 
 		if (loadRep)
@@ -3343,25 +3375,11 @@ class PlayState extends MusicBeatState
 
 				if (storyPlaylist.length <= 0)
 				{
-					//transIn = FlxTransitionableState.defaultTransIn;
-					//transOut = FlxTransitionableState.defaultTransOut;
+					transIn = FlxTransitionableState.defaultTransIn;
+					transOut = FlxTransitionableState.defaultTransOut;
 					
-				  switch(SONG.song.toLowerCase())
-                    {
-                        case 'beatbot':
-                            FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){
-                                video= new MP4Handler();
-                                video.playMP4(Paths.video('dialoguesecond'), new PlayState());
-                            });
-						case 'game-over':
-							FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){
-								video= new MP4Handler();
-								video.playMP4(Paths.video('cutscene'), new PlayState());
-							});
-                        default:
-							video.onVLCComplete();
                             LoadingState.loadAndSwitchState(new PlayState());
-                    }
+                    
 
 					paused = true;
 
@@ -3432,28 +3450,29 @@ class PlayState extends MusicBeatState
 
 					PlayState.SONG = Song.loadFromJson(poop, PlayState.storyPlaylist[0]);
 					FlxG.sound.music.stop();
-					video.onVLCComplete();
-                     LoadingState.loadAndSwitchState(new PlayState());
-                     
-				}
-			}
+					switch(SONG.song.toLowerCase())
+                    {
+					    case 'beatbot':
+				            LoadingState.loadAndSwitchState(new VideoState("assets/videos/dialoguefirst.webm",new PlayState()));
+						case 'game-over':
+							LoadingState.loadAndSwitchState(new VideoState("assets/videos/framebot.webm",new PlayState()));
+						default:
+                            LoadingState.loadAndSwitchState(new PlayState());
+                     }
+                 }
+            }
 			else
 			{
 				trace('WENT BACK TO FREEPLAY??');
 
 				paused = true;
 
+
 				FlxG.sound.music.stop();
 				vocals.stop();
 
-				if (FlxG.save.data.scoreScreen) 
-				{
+				if (FlxG.save.data.scoreScreen)
 					openSubState(new ResultsScreen());
-					new FlxTimer().start(1, function(tmr:FlxTimer)
-						{
-							inResults = true;
-						});
-				}
 				else
 					FlxG.switchState(new FreeplayState());
 			}
@@ -5055,7 +5074,16 @@ class PlayState extends MusicBeatState
 					bottomBoppers.animation.play('bop', true);
 					santa.animation.play('idle', true);
 				}
-
+			case 'normalbg':
+				if (FlxG.save.data.distractions)
+					{
+						bop.animation.play('idle', true);
+					}
+			case 'sunset':
+				if (FlxG.save.data.distractions)
+					{
+						bop.animation.play('idle', true);
+					}
 			case 'limo':
 				if (FlxG.save.data.distractions)
 				{

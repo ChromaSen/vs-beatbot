@@ -372,14 +372,12 @@ class StoryMenuState extends MusicBeatState
 			if (curWeek == 0 && !isCutscene)
 			{
 				
-				video.playMP4(Paths.video('dialoguefirst'), new PlayState()); 
-				isCutscene = true;
+				LoadingState.loadAndSwitchState(new VideoState("assets/videos/dialoguefirst.webm",new PlayState()));
 			}
 			else
 			{
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 				{
-					video.onVLCComplete();
 					LoadingState.loadAndSwitchState(new PlayState(), true);
 				});
 			}
