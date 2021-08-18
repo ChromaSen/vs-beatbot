@@ -900,12 +900,12 @@ class PlayState extends MusicBeatState
 						bop.scale.set(2, 2);
 						bop.frames = Paths.getSparrowAtlas('boppers/boppers');
 						bop.animation.addByPrefix('idle', 'boppers bottom', 24, false);
-						bop2 = new FlxSprite(0, -100);
-						bop2.scale.set(2, 2);
+						bop2 = new FlxSprite(-50, 50);
+						bop2.scale.set(1.2, 1.2);
 						bop2.frames = Paths.getSparrowAtlas('boppers/gar');
 						bop2.animation.addByPrefix('idle', 'gar bop1', 24, false);
-						bop3 = new FlxSprite(0, -100);
-						bop3.scale.set(2, 2);
+						bop3 = new FlxSprite(0, -20);
+						bop3.scale.set(1.2, 1.2);
 						bop3.frames = Paths.getSparrowAtlas('boppers/ruvsarv');
 						bop3.animation.addByPrefix('idle', 'ruvsarv bop2', 24, false);
 						if(FlxG.save.data.antialiasing)
@@ -933,12 +933,12 @@ class PlayState extends MusicBeatState
 						bop.scale.set(2, 2);
 						bop.frames = Paths.getSparrowAtlas('boppers/boppers');
 						bop.animation.addByPrefix('idle', 'boppers bottom', 24, false);
-						bop2 = new FlxSprite(0, -100);
-						bop2.scale.set(2, 2);
+						bop2 = new FlxSprite(-50, 50);
+						bop2.scale.set(1.2, 1.2);
 						bop2.frames = Paths.getSparrowAtlas('boppers/gar');
 						bop2.animation.addByPrefix('idle', 'gar bop1', 24, false);
-						bop3 = new FlxSprite(0, -100);
-						bop3.scale.set(2, 2);
+						bop3 = new FlxSprite(0, -20);
+						bop3.scale.set(1.2, 1.2);
 						bop3.frames = Paths.getSparrowAtlas('boppers/ruvsarv');
 						bop3.animation.addByPrefix('idle', 'ruvsarv bop2', 24, false);
 						if(FlxG.save.data.antialiasing)
