@@ -209,7 +209,8 @@ class PlayState extends MusicBeatState
 	var bottomBoppers:FlxSprite;
 	var santa:FlxSprite;
 	var bop:FlxSprite;
-
+	var bop2:FlxSprite;
+	var bop3:FlxSprite;
 	var fc:Bool = true;
 
 	var bgGirls:BackgroundGirls;
@@ -899,6 +900,14 @@ class PlayState extends MusicBeatState
 						bop.scale.set(2, 2);
 						bop.frames = Paths.getSparrowAtlas('boppers/boppers');
 						bop.animation.addByPrefix('idle', 'boppers bottom', 24, false);
+						bop2 = new FlxSprite(0, -100);
+						bop2.scale.set(2, 2);
+						bop2.frames = Paths.getSparrowAtlas('boppers/gar');
+						bop2.animation.addByPrefix('idle', 'gar bop1', 24, false);
+						bop3 = new FlxSprite(0, -100);
+						bop3.scale.set(2, 2);
+						bop3.frames = Paths.getSparrowAtlas('boppers/ruvsarv');
+						bop3.animation.addByPrefix('idle', 'ruvsarv bop2', 24, false);
 						if(FlxG.save.data.antialiasing)
 						{
 							bop.antialiasing = true;
@@ -924,6 +933,14 @@ class PlayState extends MusicBeatState
 						bop.scale.set(2, 2);
 						bop.frames = Paths.getSparrowAtlas('boppers/boppers');
 						bop.animation.addByPrefix('idle', 'boppers bottom', 24, false);
+						bop2 = new FlxSprite(0, -100);
+						bop2.scale.set(2, 2);
+						bop2.frames = Paths.getSparrowAtlas('boppers/gar');
+						bop2.animation.addByPrefix('idle', 'gar bop1', 24, false);
+						bop3 = new FlxSprite(0, -100);
+						bop3.scale.set(2, 2);
+						bop3.frames = Paths.getSparrowAtlas('boppers/ruvsarv');
+						bop3.animation.addByPrefix('idle', 'ruvsarv bop2', 24, false);
 						if(FlxG.save.data.antialiasing)
 						{
 							bop.antialiasing = true;
@@ -1106,6 +1123,12 @@ class PlayState extends MusicBeatState
 
 		if (!PlayStateChangeables.Optimize)
 		{
+			if (curStage == 'normalbg')
+				add(bop2);
+				add(bop3);
+			if (curStage == 'sunset')
+				add(bop2);
+				add(bop3);
 			add(gf);
 
 			// Shitty layering but whatev it works LOL
@@ -1116,8 +1139,12 @@ class PlayState extends MusicBeatState
 			
 			if (curStage == 'normalbg')
 				add(bop);
+				add(bop2);
+				add(bop3);
 			if (curStage == 'sunset')
 				add(bop);
+				add(bop2);
+				add(bop3);
 		}
 
 		if (loadRep)
@@ -3294,8 +3321,8 @@ class PlayState extends MusicBeatState
 			keyShit();
 
 		
-		if (FlxG.keys.justPressed.ONE)
-			endSong();
+	//	if (FlxG.keys.justPressed.ONE)
+		//	endSong();
 		
 	}
 
@@ -3455,7 +3482,7 @@ class PlayState extends MusicBeatState
 					    case 'beatbot':
 				            LoadingState.loadAndSwitchState(new VideoState("assets/videos/dialoguesecond.webm",new PlayState()));
 						case 'game-over':
-							LoadingState.loadAndSwitchState(new VideoState("assets/videos/framebot.webm",new PlayState()));
+							LoadingState.loadAndSwitchState(new VideoState("assets/videos/dialogue3.webm",new PlayState()));
 						default:
                             LoadingState.loadAndSwitchState(new PlayState());
                      }
@@ -5078,11 +5105,15 @@ class PlayState extends MusicBeatState
 				if (FlxG.save.data.distractions)
 					{
 						bop.animation.play('idle', true);
+						bop2.animation.play('idle', true);
+						bop3.animation.play('idle', true);
 					}
 			case 'sunset':
 				if (FlxG.save.data.distractions)
 					{
 						bop.animation.play('idle', true);
+						bop2.animation.play('idle', true);
+						bop3.animation.play('idle', true);
 					}
 			case 'limo':
 				if (FlxG.save.data.distractions)
