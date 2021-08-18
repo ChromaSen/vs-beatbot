@@ -391,25 +391,31 @@ class TitleState extends MusicBeatState
 		switch (curBeat)
 		{
 			case 0:
-				deleteCoolText();
+				deleteCoolText(); //Snowynxx
 			case 1:
-				createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
+				createCoolText(['Beatbot', 'Snowynxx', 'Skylemon', 'TheModMan', 'Non Vlogger']);
 			// credTextShit.visible = true;
 			case 3:
-				addMoreText('present');
+				deleteCoolText();
+				FlxG.camera.zoom = 0.9;
+				createCoolText(['RemKisendar', 'SpeedyFound', 'ChromaSen', 'TaeYai']);
 			// credTextShit.text += '\npresent...';
 			// credTextShit.addText();
 			case 4:
-				deleteCoolText();
+				addMoreText('present');
 			// credTextShit.visible = false;
 			// credTextShit.text = 'In association \nwith';
 			// credTextShit.screenCenter();
 			case 5:
+				deleteCoolText();
+				FlxG.camera.zoom = 1;
 				if (Main.watermarks)
 					createCoolText(['Kade Engine', 'by']);
 				else
 					createCoolText(['In Partnership', 'with']);
 			case 7:
+				FlxG.camera.flash(FlxColor.WHITE, 1);
+				FlxG.camera.shake(0.2, 0.2);
 				if (Main.watermarks)
 					addMoreText('KadeDeveloper');
 				else
@@ -437,13 +443,13 @@ class TitleState extends MusicBeatState
 			// credTextShit.text = "Friday";
 			// credTextShit.screenCenter();
 			case 13:
-				addMoreText('Friday');
+				addMoreText('VS');
 			// credTextShit.visible = true;
 			case 14:
-				addMoreText('Night');
+				addMoreText('BEATBOT');
 			// credTextShit.text += '\nNight';
 			case 15:
-				addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
+				//addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
 
 			case 16:
 				skipIntro();
